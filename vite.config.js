@@ -2,6 +2,7 @@ import path from 'path'
 
 export default {
   root: path.resolve(__dirname, 'src'), // Carpeta donde alojamos el archivo main.js
+  base: './',
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
