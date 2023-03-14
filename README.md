@@ -10,3 +10,8 @@ Utilizaremos un procedimiento basado en agile y en scroom
 1. Crearemos las historias
 2. Dividiremos las historias en tareas
 3. Agruparemos las historias en sprints
+## Recursos 
+- (https://carrebola.github.io/vanillaPill/docs/intro)
+- `npm create vite`
+- `npm install`
+- `npm run dev`
