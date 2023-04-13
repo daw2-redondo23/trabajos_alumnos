@@ -1,16 +1,18 @@
 // Import our custom CSS
-import './scss/styles.scss';
-
+import './scss/styles.scss'
 // Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap'
 
-import { footer } from "./componentes/footer";
-import { header } from "./componentes/header";
-import { home } from "./vistas/home";
-import { pruebas } from './vistas/pruebas';
+// Importamos componentes header y footer
+import { footer } from './componentes/footer.js'
+import { header } from './componentes/header.js'
+// Importamos la Función para detectar eventos al cargar las vistas
+import { enrutador } from './componentes/router';
 
-
-document.querySelector('main').innerHTML = pruebas.template;
-pruebas.script();
 document.querySelector('header').innerHTML = header.template;
-document.querySelector('footer').innerHTML = footer.template;
+header.script()
+document.querySelector('footer').innerHTML = footer.template
+
+enrutador.observadorRutas()
+// Cargamos la página home
+window.location = '#/home'

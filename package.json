@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "mocha"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
     "gh-pages": "^5.0.0",
+    "mocha": "^10.2.0",
     "sass": "^1.58.3",
     "standard": "^17.0.0",
     "vite": "^4.1.0"

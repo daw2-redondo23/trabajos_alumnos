@@ -1,0 +1,71 @@
+import { Perfil } from "../bd/perfil"
+import { User } from "../bd/user"
+export default {
+  template: `
+  <div class="container mt-5">
+    <div class="row">
+    <h1 class="text-center p-2 w-100">Registro</h1>
+    <div class="col-12 col-md-4 offset-md-4">
+      <form id="form_registro" class="p-3" novalidate>
+
+        <label class="mt-3 form-label" for="nombre">Nombre: </label>
+        <input id="nombreInput" type="text" class="form-control"  placeholder = "Manolito" required />
+        <div class="invalid-feedback">El nombre no es correcto</div>
+
+        <label class="mt-3 form-label" for="apellidos">Apellidos: </label>
+        <input  id="apellidosInput" type="text"  class="form-control"    placeholder = "Gafotas Rotas" required  />
+        <div class="invalid-feedback">Este campo no es correcto</div>
+
+        <label class="mt-3 form-label" for="email">Email</label>
+        <input id="emailInput" type="email" class="form-control" placeholder = "ychag@example.com" required />
+        <div class="invalid-feedback">El email no es correcto</div>
+
+        <label class="mt-3 form-label" for="contrasena">Contraseña: </label>
+        <input id="contrasena" type="password" class="form-control" pattern="[A-Za-z]{8,}" placeholder = "Contraseña" required />
+        <div class="invalid-feedback">
+            La contraseña debe contener 8 letras o más que deben ser mayusculas y minusculas, no se aceptan signos ni números
+        </div>
+
+        <button type="submit" class="mt-5 btn btn-success w-100">Enviar</button>
+      </form>
+    </div>
+    
+   
+</div>
+    `,
+    script: () => {
+        
+        document.querySelector('#form_registro').addEventListener('submit', async function (e) {
+          e.preventDefault()
+          console.log("hola");
+          let a =   document.querySelector('#nombreInput');
+          console.log("valor de a",a.value);
+            console.log(document.querySelector('#apellidosInput').value);
+            console.log(document.querySelector('#emailInput').value);
+            console.log(document.querySelector('#contrasena').value);
+          try {
+            
+            // Objeto con datos para el registro de user
+            const usuario = {
+              email: document.querySelector('#emailInput').value,
+              password: document.querySelector('#contrasena').value
+            }
+            console.log(usuario);
+            const nuevoUser = await User.create(usuario)
+            // Objeto con datos para perfil
+            const perfilData = {
+              nombre: document.querySelector('#nombreInput').value,
+              apellidos: document.querySelector('#apellidosInput').value,
+              user_id: nuevoUser.id // Tomamos el id que nos devuelve el registro
+            }
+            await Perfil.create(perfilData)
+            alert('Usuario creado con éxito')
+            // Cargamos la página login
+            window.location.href = '/#/login'
+          } catch (error) {
+            console.log(error)
+            alert('Error al crear usuario')
+          }
+        })
+      }
+}
