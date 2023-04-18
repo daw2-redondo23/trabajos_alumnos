@@ -60,5 +60,11 @@ ${formEditarUsuario.template}
     } catch (error) {
       // alert('No he podido cargar el usuario logueado')
     }
+
+    // Capturamos click en item logout de menú de usuario
+    document.querySelector('.liLogout').addEventListener('click', async () => {
+        // Cerramos sesión utilizando el método de logout de nuestra clase User
+         await User.logout()
+    })
   }
 }
