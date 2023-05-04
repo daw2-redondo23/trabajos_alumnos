@@ -27,7 +27,6 @@ export default {
                 
             </tbody>
         </table>
-        <a href="#/editarProyecto">prueba</a>
     </div>
   </main>
   
