@@ -1,12 +1,14 @@
 import { supabase } from './supabase.js'
 export class Proyecto {
   // Mapping de propiedades de la tabla proyectos
-  constructor (id = null, created_at = null, nombre = null, descripcion = null, usuario_id = null) {
+  constructor (id = null, created_at = null, nombre = null, descripcion = null, user_id = null, enlace = null) {
     this.id = id
     this.created_at = created_at
     this.nombre = nombre
     this.descripcion = descripcion
-    this.usuario_id = usuario_id
+    this.enlace = enlace
+    this.user_id = user_id
+   
   }
 
   // leer todos
@@ -18,8 +20,8 @@ export class Proyecto {
       throw new Error(error.message)
     }
     // devuelve array de objetos
-    return proyectos.map(({ id, nombre, descripcion, usuario_id }) => {
-      return new Proyecto(id, nombre, descripcion, usuario_id)
+    return proyectos.map(({id, created_at, nombre, descripcion, user_id, enlace}) => {
+      return new Proyecto(id, created_at, nombre, descripcion, user_id, enlace)
     })
   }
 
@@ -34,7 +36,7 @@ export class Proyecto {
       throw new Error(error.message)
     }
     // Devuelve un nuevo objeto con los datos del registro
-    return new Proyecto(proyectos.id, proyectos.nombre, proyectos.descripcion, proyectos.usuario_id)
+    return new Proyecto(proyectos.id,proyectos.created_at, proyectos.nombre, proyectos.descripcion, proyectos.user_id, proyectos.enlace)
   }
 
   // crear registro (método static que se puede leer desde la clase sin necesidad de crear una instancia)

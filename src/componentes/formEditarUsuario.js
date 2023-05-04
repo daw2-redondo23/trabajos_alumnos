@@ -1,3 +1,5 @@
+import { Perfil } from "../bd/perfil";
+import { User } from "../bd/user";
 export const formEditarUsuario = {
     template: `
       
@@ -16,7 +18,7 @@ export const formEditarUsuario = {
           <span aria-hidden="true"></span>
           </button>
       </div>
-      <form class="p-3">
+      <form id="formEditarUsuario" class="p-3">
         <div class="modal-body">
           
           <label class="mt-3 form-label" for="nick">Nombre: </label>
@@ -31,15 +33,13 @@ export const formEditarUsuario = {
               type="email"
               class="form-control"
               value="email@gmail.com"
+              disabled
           />
   
-          <label class="mt-3 form-label" for="contraseña">Contraseña: </label>
-          <input id="contraseña" type="password" class="form-control" value="123456" />
+          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">
-          Guardar cambios
-          </button>
+          <button id="actualizar" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
           <button
           type="button"
           class="btn btn-secondary"
@@ -52,5 +52,35 @@ export const formEditarUsuario = {
     </div>
   </div>
   </div>
-    `
+    `,
+    script: async () => {
+      // Código de validación
+
+      // Seleccionamos el formulario de editar usuario
+      const formulario = document.querySelector('#formEditarUsuario')
+      // Capturamos los datos del usuario logueado
+      const usuarioLogueado = await User.getUser()
+      console.log(usuarioLogueado);
+      // Si el usuario logeado existe
+      if (usuarioLogueado) {
+        
+        const userId = usuarioLogueado.id
+        // Capturamos los datos del perfil del usuario logueado
+        const datosUsuario = await Perfil.getByUserId(userId)
+        console.log(datosUsuario);
+        // Insertamos los datos en el formulario para editar el usuario
+        formulario.nombre.value = datosUsuario.nombre
+        formulario.apellidos.value = datosUsuario.apellidos
+        formulario.email.value = datosUsuario.email   
+
+        document.querySelector('#actualizar').addEventListener("click", (e)=>{
+            datosUsuario.nombre = formulario.nombre.value
+            datosUsuario.apellidos = formulario.apellidos.value
+
+            datosUsuario.update(datosUsuario)
+
+        })
+
+      }    
   }
+}

@@ -56,7 +56,9 @@ export default {
             const perfilData = {
               nombre: document.querySelector('#nombreRegistro').value,
               apellidos: document.querySelector('#apellidosRegistro').value,
-              user_id: nuevoUser.id // Tomamos el id que nos devuelve el registro
+              user_id: nuevoUser.id, // Tomamos el id que nos devuelve el registro
+              avatar: '../assets/avatar.svg',
+              email: document.querySelector('#emailRegistro').value
             }
             await Perfil.create(perfilData)
             alert('Usuario creado con éxito')

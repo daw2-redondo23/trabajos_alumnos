@@ -1,4 +1,5 @@
 import { User } from "../bd/user"
+import { menuUsuario } from "../componentes/menuUsuario"
 
 export default {
     template: `
@@ -59,14 +60,17 @@ export default {
             divUsuarioLogeado.innerHTML = usuarioLogeado.email
 
             // y ocultamos item 'login' para mostrar item 'logout'
-            document.querySelector('.liLogin').classList.add('d-none ')
-           const divLogOut =  document.querySelectorAll('.liLogout')
-           //console.log(divLogOut[0]);
-            for(let i=0; i<=divLogOut.length; i++){
-               divLogOut[i].classList.remove('d-none')
+            let logins = document.querySelectorAll('.liLogin');
+            logins[0].classList.add("d-none")
+            
+            console.log(logins[0].classList)
+            
+            let perfilLogin = {
+                email: usuarioLogeado.email,
+                rol: 'registrado'
             }
-           
-           
+            menuUsuario.script(perfilLogin)
+                
             // Cagamos la página home
          window.location.href = '/#/home'
         } catch (error) {

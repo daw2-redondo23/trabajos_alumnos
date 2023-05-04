@@ -1,5 +1,7 @@
 import { User } from '../bd/user'
+import { formEditarUsuario } from './formEditarUsuario'
 import { header } from './header'
+
 export const menuUsuario = {
   template: `
   <ul class="navbar nav me-5">
@@ -71,17 +73,10 @@ export const menuUsuario = {
       `,
       alumno: `
       <li class="text-center" id="rolUsuarioLogueado">
-        anónimo
+        alumno
       </li>
       <li>
-        <a
-          id="editarPerfil"
-          data-bs-toggle="modal"
-          data-bs-target="#editar"
-          class="dropdown-item"
-          href="#/editarPerfil"
-          >Editar perfil</a
-        >
+        <a id="editarPerfil" data-bs-toggle="modal" data-bs-target="#editar" class="dropdown-item" href="#/editarPerfil">Editar perfil</a>
       </li>
       <li>
         <a class="liMisProyectos dropdown-item d-none" href="#/misProyectos">Mis Proyectos</a>
@@ -185,8 +180,8 @@ export const menuUsuario = {
 
     // Gestionamos click en editar perfil
     document.querySelector('#editarPerfil').addEventListener('click', (e) => {
-      e.preventDefault()
-      // formEditarPerfil.script()
+      e.preventDefault() 
+      formEditarUsuario.script()
     })
   }
 }

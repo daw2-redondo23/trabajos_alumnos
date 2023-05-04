@@ -1,3 +1,5 @@
+import { formEditarUsuario } from "../../componentes/formEditarUsuario"
+
 export default {
     template: `
     <main style="padding-top: 100px">
