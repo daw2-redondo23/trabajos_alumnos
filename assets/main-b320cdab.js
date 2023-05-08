@@ -11743,6 +11743,7 @@ const enrutador = {
   },
   // Capturamos los eventos
   observadorRutas: () => {
+    
     document.body.addEventListener("click", (event2) => {
       const link = event2.target;
       if (link.tagName === "A") {
@@ -11758,6 +11759,7 @@ const enrutador = {
     });
   }
 };
+let repositorio = "trabajos_alumnos"
 document.querySelector("header").innerHTML = header.template;
 header.script();
 document.querySelector("footer").innerHTML = footer.template;
