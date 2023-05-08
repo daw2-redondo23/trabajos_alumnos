@@ -11617,7 +11617,7 @@ const menuUsuario = {
         e.preventDefault();
         await User.logout();
         header.script();
-        window.location.href = repositorio + "/#/home";
+        window.location.href = "/#/home";
       });
     } else {
       const imgAvatar = "/assets/avatar.svg";
