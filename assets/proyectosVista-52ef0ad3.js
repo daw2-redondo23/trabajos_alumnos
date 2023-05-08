@@ -89,8 +89,9 @@ const proyectosVista = {
             const seguro = confirm("¿Está seguro que desea borrar el proyecto? Se eliminarán todos sus comentarios y notas " + proyectoABorrar.nombre + ", " + proyectoABorrar.nombre);
             if (seguro) {
               await Proyecto.delete(id);
+              console.log("lo has eliminado")
             }
-            
+            console.log("no lo has borrado")
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
