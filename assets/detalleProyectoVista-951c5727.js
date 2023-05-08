@@ -76,7 +76,7 @@ const detalleProyectoVista = {
       document.querySelector("#descripcion").value = proyectoActualizar.descripcion;
       document.querySelector("#enlace").value = proyectoActualizar.enlace;
       document.querySelector("#volver").addEventListener("click", (e) => {
-        window.location.href = "trabajos_alumnos/#/proyectos";
+        window.location.href = "/#/proyectos";
       });
     } catch (error) {
     }
