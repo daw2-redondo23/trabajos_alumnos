@@ -58,6 +58,7 @@ const editarProyecto = {
             <button type="submit" class="mt-5 btn btn-success" id="actualizarProyecto">
                 Actualizar proyecto
             </button>
+            <a href="">
             <button type="button" id="cancelar" class="mt-5 btn btn-primary">
                 Cancelar
             </button>
@@ -84,10 +85,10 @@ const editarProyecto = {
         } catch (error) {
           console.log(error);
         }
-        window.location.href = "trabajos_alumnos/#/proyectos";
+        window.location.href = "/#/proyectos";
       });
       document.querySelector("#cancelar").addEventListener("click", (e) => {
-        window.location.href = "trabajos_alumnos/#/proyectos";
+        window.location.href = "/#/proyectos";
       });
     } catch (error) {
     }
