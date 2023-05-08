@@ -11751,7 +11751,7 @@ const enrutador = {
         enrutador.router();
       }
     });
-    window.addEventListener("popstate", (e) => {
+    window.addEventListener("popstate",(e) => {
       console.log("evento popstate - Te estás moviendo por el historial");
       enrutador.router();
     });
