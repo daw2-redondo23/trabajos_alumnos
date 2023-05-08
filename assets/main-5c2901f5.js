@@ -11474,7 +11474,7 @@ const menuUsuario = {
           <span id="emailUsuarioLogueado" class="pe-3 text-dark"></span>
             <img
               id="imgAvatar"
-              src="/images/avatar.svg"
+              src="avatar.svg"
               alt="Logo"
               width="30"
               height="30"
@@ -11637,7 +11637,7 @@ const header = {
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#/home">
       <img
-        src="/images/logo_vanilla.svg"
+        src="logo_vanilla.svg"
         alt="Logo"
         width="30"
         height="30"

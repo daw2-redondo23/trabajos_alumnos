@@ -40,7 +40,7 @@ const proyectosVista = {
         tabla += `
       <tr>
         <td>
-          <img src="/images/imagenes/proyectos/proyecto.png" width="100" alt="" data-id="${proyecto.id}" class="detalle"/>
+          <img src="proyecto.png" width="100" alt="" data-id="${proyecto.id}" class="detalle"/>
         </td>
         <td>${(await Perfil.getByUserId(proyecto.user_id)).nombre}</td>
         <td>${proyecto.nombre}</td>
@@ -52,14 +52,14 @@ const proyectosVista = {
             type="button"
             class="btn text-danger detalle"
           >
-          <img  data-id="${proyecto.id}" class="detalle w-50" src="/images/iconos/icons8-acerca-de.svg" width="20" alt="" />
+          <img  data-id="${proyecto.id}" class="detalle w-50" src="icons8-acerca-de.svg" width="20" alt="" />
           </button>
           <button
             data-id="${proyecto.id}"
             type="button"
             class="btn text-info editar"
           >
-            <img data-id="${proyecto.id}" class="editar w-50" src="/images/iconos/icons8-editar.svg" width="20" alt="" />
+            <img data-id="${proyecto.id}" class="editar w-50" src="icons8-editar.svg" width="20" alt="" />
           </button>
 
           <button
@@ -67,7 +67,7 @@ const proyectosVista = {
             type="button"
             class="btn text-danger borrar"
           >
-            <img data-id="${proyecto.id}" class="borrar w-75" src="/images/iconos/icons8-basura-llena.svg" width="20" alt=""/>
+            <img data-id="${proyecto.id}" class="borrar w-75" src="assets/icons8-basura-llena.svg" width="20" alt=""/>
           </button>
         </td>
       </tr>
