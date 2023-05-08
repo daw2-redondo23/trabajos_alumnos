@@ -11726,9 +11726,10 @@ const enrutador = {
   },
   // Método que obtiene la ruta del navegador
   router: async () => {
+    let repositorio = "trabajos_alumnos"
     const pathCompleto = window.location.hash;
-    const path = pathCompleto.split("/")[2];
-    const parametro = pathCompleto.split("/")[3];
+    const path = pathCompleto.split("/")[3];
+    const parametro = pathCompleto.split("/")[4];
     const componenteVista = await enrutador.rutas[path];
     if (componenteVista) {
       try {
@@ -11761,7 +11762,7 @@ document.querySelector("header").innerHTML = header.template;
 header.script();
 document.querySelector("footer").innerHTML = footer.template;
 enrutador.observadorRutas();
-window.location = "#/home";
+window.location = "#/"+ repositorio +"/home";
 export {
   Perfil as P,
   User as U,

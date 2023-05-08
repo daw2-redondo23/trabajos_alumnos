@@ -67,6 +67,7 @@ const detalleProyectoVista = {
   script: async (id) => {
     console.log("Estas en la vista detallada de el proyecto ", id);
     try {
+      let repositorio = "trabajos_alumnos"
       const proyectoActualizar = await Proyecto.getById(id);
       console.log(proyectoActualizar);
       document.querySelector("#user_id").value = proyectoActualizar.user_id;
@@ -75,7 +76,7 @@ const detalleProyectoVista = {
       document.querySelector("#descripcion").value = proyectoActualizar.descripcion;
       document.querySelector("#enlace").value = proyectoActualizar.enlace;
       document.querySelector("#volver").addEventListener("click", (e) => {
-        window.location.href = "/#/proyectos";
+        window.location.href = "/#/"+ repositorio +"/proyectos";
       });
     } catch (error) {
     }

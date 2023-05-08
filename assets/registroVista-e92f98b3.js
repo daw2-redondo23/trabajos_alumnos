@@ -33,6 +33,7 @@ const registroVista = {
 </div>
     `,
   script: () => {
+    let repositorio = "trabajos_alumnos"
     document.querySelector("#form_registro").addEventListener("submit", async function(e) {
       e.preventDefault();
       console.log("hola");
@@ -58,7 +59,7 @@ const registroVista = {
         };
         await Perfil.create(perfilData);
         alert("Usuario creado con éxito");
-        window.location.href = "/#/login";
+        window.location.href = "/#/"+ repositorio +"/login";
       } catch (error) {
         console.log(error);
         alert("Error al crear usuario");

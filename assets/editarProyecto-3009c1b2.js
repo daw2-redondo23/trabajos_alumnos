@@ -67,6 +67,7 @@ const editarProyecto = {
     `,
   script: async (id) => {
     console.log("Estas editando el proyecto ", id);
+    let repositorio = "trabajos_alumnos"
     try {
       const proyectoActualizar = await Proyecto.getById(id);
       console.log(proyectoActualizar);
@@ -84,10 +85,10 @@ const editarProyecto = {
         } catch (error) {
           console.log(error);
         }
-        window.location.href = "/#/proyectos";
+        window.location.href = "/#/"+ repositorio +"/proyectos";
       });
       document.querySelector("#cancelar").addEventListener("click", (e) => {
-        window.location.href = "/#/proyectos";
+        window.location.href = "/#/"+ repositorio +"/proyectos";
       });
     } catch (error) {
     }

@@ -46,6 +46,7 @@ const nuevoProyectoVista = {
   </div>
       `,
   script: () => {
+    let repositorio = "trabajos_alumnos"
     document.querySelector("#form_proyecto").addEventListener("submit", async function(e) {
       e.preventDefault();
       try {
@@ -61,7 +62,7 @@ const nuevoProyectoVista = {
         console.log(user.id);
         await Proyecto.create(proyecto);
         alert("Proyecto creado con éxito");
-        window.location.href = "/#/proyectos";
+        window.location.href = "/#/"+ repositorio +"/proyectos";
       } catch (error) {
         console.log(error);
         alert("Error al crear proyecto " + error);
