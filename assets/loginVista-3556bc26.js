@@ -61,7 +61,7 @@ const loginVista = {
           rol: "registrado"
         };
         menuUsuario.script(perfilLogin);
-        window.location.href = "/#/home";
+        window.location.href = repositorio + "/#/home";
       } catch (error) {
         alert("No se ha podido iniciar sesión " + error);
       }
