@@ -1,4 +1,4 @@
-import { U as User, P as Perfil } from "./main-b320cdab.js";
+import { U as User, P as Perfil } from "./main-5c2901f5.js";
 const registroVista = {
   template: `
   <div class="container mt-5">
@@ -33,7 +33,6 @@ const registroVista = {
 </div>
     `,
   script: () => {
-    const repositorio = "trabajos_alumnos"
     document.querySelector("#form_registro").addEventListener("submit", async function(e) {
       e.preventDefault();
       console.log("hola");
@@ -59,7 +58,7 @@ const registroVista = {
         };
         await Perfil.create(perfilData);
         alert("Usuario creado con éxito");
-        window.location.href = repositorio + "/#/login";
+        window.location.href = "/#/login";
       } catch (error) {
         console.log(error);
         alert("Error al crear usuario");

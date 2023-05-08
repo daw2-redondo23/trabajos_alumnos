@@ -1,5 +1,5 @@
-import { P as Proyecto } from "./proyecto-db6f2440.js";
-import "./main-b320cdab.js";
+import { P as Proyecto } from "./proyecto-d83f9a7b.js";
+import "./main-5c2901f5.js";
 const editarProyecto = {
   template: `
     <div
@@ -67,7 +67,6 @@ const editarProyecto = {
     `,
   script: async (id) => {
     console.log("Estas editando el proyecto ", id);
-    let repositorio = "trabajos_alumnos"
     try {
       const proyectoActualizar = await Proyecto.getById(id);
       console.log(proyectoActualizar);
@@ -85,11 +84,10 @@ const editarProyecto = {
         } catch (error) {
           console.log(error);
         }
-        window.location.href = repositorio + "/#/proyectos";
+        window.location.href = "/#/proyectos";
       });
       document.querySelector("#cancelar").addEventListener("click", (e) => {
-        window.location.href = repositorio + "/#/proyectos";
-
+        window.location.href = "/#/proyectos";
       });
     } catch (error) {
     }

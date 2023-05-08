@@ -1,5 +1,5 @@
-import { P as Perfil } from "./main-b320cdab.js";
-import { P as Proyecto } from "./proyecto-db6f2440.js";
+import { P as Perfil } from "./main-5c2901f5.js";
+import { P as Proyecto } from "./proyecto-d83f9a7b.js";
 const proyectosVista = {
   template: `
     <main style="padding-top: 100px">
@@ -24,14 +24,12 @@ const proyectosVista = {
                 
             </tbody>
         </table>
-        <a href="#/editarProyecto">prueba</a>
     </div>
   </main>
   
   `,
   script: async () => {
     console.log("lista de proyectos");
-    let repositorio = "trabajos_alumnos"
     try {
       const proyectos = await Proyecto.getAll();
       console.log(proyectos);
@@ -47,7 +45,7 @@ const proyectosVista = {
         <td>${(await Perfil.getByUserId(proyecto.user_id)).nombre}</td>
         <td>${proyecto.nombre}</td>
         <td>${proyecto.descripcion}</td>
-        <td class="w-25"><a href="${repositorio} + "/" + ${proyecto.enlace}" target="_black">${proyecto.enlace}</a></td>
+        <td class="w-25"><a href="${proyecto.enlace}" target="_black">${proyecto.enlace}</a></td>
         <td class="text-end">
           <button
             data-id="${proyecto.id}"
@@ -92,7 +90,7 @@ const proyectosVista = {
             if (seguro) {
               await Proyecto.delete(id);
             }
-            window.location.href = repositorio + "/#/proyectos";
+            window.location.href = "/#/proyectos";
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
@@ -100,7 +98,7 @@ const proyectosVista = {
         if (e.target.classList.contains("editar")) {
           try {
             console.log("Vas a ir a la ventana editar");
-            window.location.href = repositorio + "/#/editarProyecto/" + id;
+            window.location.href = "#/editarProyecto/" + id;
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
@@ -108,7 +106,7 @@ const proyectosVista = {
         if (e.target.classList.contains("detalle")) {
           try {
             console.log("Vas a ir a la ventana detalle");
-            window.location.href = repositorio + "/#/detalleProyecto/" + id;
+            window.location.href = "#/detalleProyecto/" + id;
           } catch (error) {
           }
         }

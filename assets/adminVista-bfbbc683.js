@@ -1,4 +1,4 @@
-import { f as formEditarUsuario } from "./main-b320cdab.js";
+import { f as formEditarUsuario } from "./main-5c2901f5.js";
 const adminVista = {
   template: `
     <main style="padding-top: 100px">

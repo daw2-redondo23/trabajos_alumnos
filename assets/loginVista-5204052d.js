@@ -1,4 +1,4 @@
-import { U as User, m as menuUsuario } from "./main-b320cdab.js";
+import { U as User, m as menuUsuario } from "./main-5c2901f5.js";
 const loginVista = {
   template: `
     <div
@@ -41,7 +41,6 @@ const loginVista = {
     `,
   script: () => {
     const form = document.querySelector("#login");
-    const repositorio = "trabajos_alumnos"
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       try {
@@ -61,7 +60,7 @@ const loginVista = {
           rol: "registrado"
         };
         menuUsuario.script(perfilLogin);
-        window.location.href = repositorio + "/#/home";
+        window.location.href = "/#/home";
       } catch (error) {
         alert("No se ha podido iniciar sesión " + error);
       }

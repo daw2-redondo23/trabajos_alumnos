@@ -11613,7 +11613,6 @@ const menuUsuario = {
       document.querySelector("#emailUsuarioLogueado").innerHTML = perfilLogueado.email;
       document.querySelector("#rolUsuarioLogueado").innerHTML = perfilLogueado.rol;
       document.querySelector(".liLogout").addEventListener("click", async (e) => {
-        const repositorio = "trabajos_alumnos"
         e.preventDefault();
         await User.logout();
         header.script();
@@ -11703,14 +11702,14 @@ const enrutador = {
   rutas: {
     home: __vitePreload(() => import("./homeVista-742f8785.js"), true ? [] : void 0, import.meta.url),
     // Usuarios
-    adminUsuarios: __vitePreload(() => import("./adminVista-8893df7a.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registroVista-e92f98b3.js"), true ? [] : void 0, import.meta.url),
-    login: __vitePreload(() => import("./loginVista-3556bc26.js"), true ? [] : void 0, import.meta.url),
+    adminUsuarios: __vitePreload(() => import("./adminVista-bfbbc683.js"), true ? [] : void 0, import.meta.url),
+    registro: __vitePreload(() => import("./registroVista-121b2c1d.js"), true ? [] : void 0, import.meta.url),
+    login: __vitePreload(() => import("./loginVista-5204052d.js"), true ? [] : void 0, import.meta.url),
     // Proyectos
-    proyectos: __vitePreload(() => import("./proyectosVista-739065ca.js"), true ? ["./proyectosVista-739065ca.js","./proyecto-db6f2440.js"] : void 0, import.meta.url),
-    nuevoProyecto: __vitePreload(() => import("./nuevoProyectoVista-5ed17f14.js"), true ? ["./nuevoProyectoVista-5ed17f14.js","./proyecto-db6f2440.js"] : void 0, import.meta.url),
-    editarProyecto: __vitePreload(() => import("./editarProyecto-3009c1b2.js"), true ? ["./editarProyecto-3009c1b2.js","./proyecto-db6f2440.js"] : void 0, import.meta.url),
-    detalleProyecto: __vitePreload(() => import("./detalleProyectoVista-b0d4f8bd.js"), true ? ["./detalleProyectoVista-b0d4f8bd.js","./proyecto-db6f2440.js"] : void 0, import.meta.url),
+    proyectos: __vitePreload(() => import("./proyectosVista-52ef0ad3.js"), true ? ["./proyectosVista-52ef0ad3.js","./proyecto-d83f9a7b.js"] : void 0, import.meta.url),
+    nuevoProyecto: __vitePreload(() => import("./nuevoProyectoVista-66b1274f.js"), true ? ["./nuevoProyectoVista-66b1274f.js","./proyecto-d83f9a7b.js"] : void 0, import.meta.url),
+    editarProyecto: __vitePreload(() => import("./editarProyecto-276b0927.js"), true ? ["./editarProyecto-276b0927.js","./proyecto-d83f9a7b.js"] : void 0, import.meta.url),
+    detalleProyecto: __vitePreload(() => import("./detalleProyectoVista-951c5727.js"), true ? ["./detalleProyectoVista-951c5727.js","./proyecto-d83f9a7b.js"] : void 0, import.meta.url),
     misProyectos: __vitePreload(() => import("./misProyectosVista-4ed993c7.js"), true ? [] : void 0, import.meta.url),
     // Enunciados
     enunciados: __vitePreload(() => import("./enunciadosVista-4ed993c7.js"), true ? [] : void 0, import.meta.url),
@@ -11728,8 +11727,8 @@ const enrutador = {
   // Método que obtiene la ruta del navegador
   router: async () => {
     const pathCompleto = window.location.hash;
-    const path = pathCompleto.split("/")[3];
-    const parametro = pathCompleto.split("/")[4];
+    const path = pathCompleto.split("/")[1];
+    const parametro = pathCompleto.split("/")[2];
     const componenteVista = await enrutador.rutas[path];
     if (componenteVista) {
       try {
@@ -11743,7 +11742,6 @@ const enrutador = {
   },
   // Capturamos los eventos
   observadorRutas: () => {
-    
     document.body.addEventListener("click", (event2) => {
       const link = event2.target;
       if (link.tagName === "A") {
@@ -11763,8 +11761,7 @@ document.querySelector("header").innerHTML = header.template;
 header.script();
 document.querySelector("footer").innerHTML = footer.template;
 enrutador.observadorRutas();
-const repositorio = "trabajos_alumnos"
-window.location.href =  "/#/home";
+window.location = "#/home";
 export {
   Perfil as P,
   User as U,

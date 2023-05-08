@@ -1,5 +1,5 @@
-import { U as User } from "./main-b320cdab.js";
-import { P as Proyecto } from "./proyecto-db6f2440.js";
+import { U as User } from "./main-5c2901f5.js";
+import { P as Proyecto } from "./proyecto-d83f9a7b.js";
 const nuevoProyectoVista = {
   template: `
     <div
@@ -46,7 +46,6 @@ const nuevoProyectoVista = {
   </div>
       `,
   script: () => {
-    let repositorio = "trabajos_alumnos"
     document.querySelector("#form_proyecto").addEventListener("submit", async function(e) {
       e.preventDefault();
       try {
@@ -62,7 +61,7 @@ const nuevoProyectoVista = {
         console.log(user.id);
         await Proyecto.create(proyecto);
         alert("Proyecto creado con éxito");
-        window.location.href = repositorio + "/#/proyectos";
+        window.location.href = "/#/proyectos";
       } catch (error) {
         console.log(error);
         alert("Error al crear proyecto " + error);
