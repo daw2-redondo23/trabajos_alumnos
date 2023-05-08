@@ -11613,7 +11613,7 @@ const menuUsuario = {
       document.querySelector("#emailUsuarioLogueado").innerHTML = perfilLogueado.email;
       document.querySelector("#rolUsuarioLogueado").innerHTML = perfilLogueado.rol;
       document.querySelector(".liLogout").addEventListener("click", async (e) => {
-        let repositorio = "trabajos_alumnos"
+        const repositorio = "trabajos_alumnos"
         e.preventDefault();
         await User.logout();
         header.script();
