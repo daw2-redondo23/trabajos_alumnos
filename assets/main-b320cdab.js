@@ -11758,12 +11758,11 @@ const enrutador = {
     });
   }
 };
-const repositorio = "trabajos_alumnos"
 document.querySelector("header").innerHTML = header.template;
 header.script();
 document.querySelector("footer").innerHTML = footer.template;
 enrutador.observadorRutas();
-window.location = repositorio +"/#/home";
+window.location =  "/#/home";
 export {
   Perfil as P,
   User as U,
