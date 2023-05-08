@@ -84,10 +84,10 @@ const editarProyecto = {
         } catch (error) {
           console.log(error);
         }
-        window.location.href = "/#/proyectos";
+        window.location.href = "trabajos_alumnos/#/proyectos";
       });
       document.querySelector("#cancelar").addEventListener("click", (e) => {
-        window.location.href = "/#/proyectos";
+        window.location.href = "trabajos_alumnos/#/proyectos";
       });
     } catch (error) {
     }

@@ -5,8 +5,8 @@ const proyectosVista = {
     <main style="padding-top: 100px">
     <div class="container">
         <h1>Proyectos</h1>
-        <a href="/#/nuevoProyecto" id="nuevoProyecto" class="btn btn-success mt-3">Nuevo Proyecto</a>
-        <a href="/#/misProyectos" id="misProyectos" class="btn btn-warning mt-3 ms-2">Mis Proyectos</a>
+        <a href="trabajos_alumnos/#/nuevoProyecto" id="nuevoProyecto" class="btn btn-success mt-3">Nuevo Proyecto</a>
+        <a href="trabajos_alumnos/#/misProyectos" id="misProyectos" class="btn btn-warning mt-3 ms-2">Mis Proyectos</a>
         <table id="tablaProyectos" class="table table-striped table-hover mt-5 align-middle">
             <thead>
                 <tr>
