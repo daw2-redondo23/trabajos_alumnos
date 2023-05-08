@@ -58,7 +58,7 @@ const editarProyecto = {
             <button type="submit" class="mt-5 btn btn-success" id="actualizarProyecto">
                 Actualizar proyecto
             </button>
-            <a href="">
+            
             <button type="button" id="cancelar" class="mt-5 btn btn-primary">
                 Cancelar
             </button>

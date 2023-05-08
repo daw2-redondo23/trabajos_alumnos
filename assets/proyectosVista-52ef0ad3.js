@@ -62,13 +62,13 @@ const proyectosVista = {
             <img data-id="${proyecto.id}" class="editar w-50" src="assets/icons8-editar.svg" width="20" alt="" />
           </button>
 
-          <button
+          <a href="/trabajos_alumnos/#/proyectos"
             data-id="${proyecto.id}"
             type="button"
             class="btn text-danger borrar"
           >
             <img data-id="${proyecto.id}" class="borrar w-75" src="assets/icons8-basura-llena.svg" width="20" alt=""/>
-          </button>
+          </a>
         </td>
       </tr>
       `;
