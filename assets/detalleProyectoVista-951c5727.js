@@ -57,7 +57,7 @@ const detalleProyectoVista = {
                 disabled
             />
             <div class="invalid-feedback">El link no es correcto</div>  
-            <a href="/#/proyectos" id="volver" class="mt-5 btn btn-primary">
+            <a href="/trabajos_alumnos/#/proyectos" id="volver" class="mt-5 btn btn-primary">
               Volver atrás
             </a>
 
@@ -76,7 +76,7 @@ const detalleProyectoVista = {
       document.querySelector("#descripcion").value = proyectoActualizar.descripcion;
       document.querySelector("#enlace").value = proyectoActualizar.enlace;
       document.querySelector("#volver").addEventListener("click", (e) => {
-        window.location.href = "trabajos_alumnos/#/proyectos";
+        window.location.href = "/#/proyectos";
       });
     } catch (error) {
     }
