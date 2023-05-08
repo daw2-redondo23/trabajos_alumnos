@@ -41,7 +41,7 @@ const loginVista = {
     `,
   script: () => {
     const form = document.querySelector("#login");
-    let repositorio = "trabajos_alumnos"
+    const repositorio = "trabajos_alumnos"
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       try {
