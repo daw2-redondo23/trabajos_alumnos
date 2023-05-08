@@ -90,7 +90,7 @@ const proyectosVista = {
             if (seguro) {
               await Proyecto.delete(id);
             }
-            window.location.href = "trabajos_alumnos/#/proyectos";
+            
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
