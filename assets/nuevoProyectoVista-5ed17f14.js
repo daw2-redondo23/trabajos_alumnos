@@ -62,7 +62,7 @@ const nuevoProyectoVista = {
         console.log(user.id);
         await Proyecto.create(proyecto);
         alert("Proyecto creado con éxito");
-        window.location.href = "/#/"+ repositorio +"/proyectos";
+        window.location.href = repositorio + "/#/proyectos";
       } catch (error) {
         console.log(error);
         alert("Error al crear proyecto " + error);

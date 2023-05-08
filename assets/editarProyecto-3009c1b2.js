@@ -85,10 +85,11 @@ const editarProyecto = {
         } catch (error) {
           console.log(error);
         }
-        window.location.href = "/#/"+ repositorio +"/proyectos";
+        window.location.href = repositorio + "/#/proyectos";
       });
       document.querySelector("#cancelar").addEventListener("click", (e) => {
-        window.location.href = "/#/"+ repositorio +"/proyectos";
+        window.location.href = repositorio + "/#/proyectos";
+
       });
     } catch (error) {
     }

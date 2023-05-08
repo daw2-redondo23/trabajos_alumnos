@@ -92,7 +92,7 @@ const proyectosVista = {
             if (seguro) {
               await Proyecto.delete(id);
             }
-            window.location.href = "/#/"+ repositorio +"/proyectos";
+            window.location.href = repositorio + "/#/proyectos";
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
@@ -100,7 +100,7 @@ const proyectosVista = {
         if (e.target.classList.contains("editar")) {
           try {
             console.log("Vas a ir a la ventana editar");
-            window.location.href = "#/"+ repositorio +"/editarProyecto/" + id;
+            window.location.href = repositorio + "/#/editarProyecto/" + id;
           } catch (error) {
             alert("No se han podido borrar el proyecto" + error);
           }
@@ -108,7 +108,7 @@ const proyectosVista = {
         if (e.target.classList.contains("detalle")) {
           try {
             console.log("Vas a ir a la ventana detalle");
-            window.location.href = "#/"+ repositorio +"/detalleProyecto/" + id;
+            window.location.href = repositorio + "/#/detalleProyecto/" + id;
           } catch (error) {
           }
         }

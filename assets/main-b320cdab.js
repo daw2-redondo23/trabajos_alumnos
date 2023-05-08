@@ -11726,7 +11726,6 @@ const enrutador = {
   },
   // Método que obtiene la ruta del navegador
   router: async () => {
-    let repositorio = "trabajos_alumnos"
     const pathCompleto = window.location.hash;
     const path = pathCompleto.split("/")[3];
     const parametro = pathCompleto.split("/")[4];
@@ -11759,12 +11758,12 @@ const enrutador = {
     });
   }
 };
-let repositorio = "trabajos_alumnos"
+const repositorio = "trabajos_alumnos"
 document.querySelector("header").innerHTML = header.template;
 header.script();
 document.querySelector("footer").innerHTML = footer.template;
 enrutador.observadorRutas();
-window.location = "#/"+ repositorio +"/home";
+window.location = repositorio +"/#/home";
 export {
   Perfil as P,
   User as U,
