@@ -57,7 +57,7 @@ const detalleProyectoVista = {
                 disabled
             />
             <div class="invalid-feedback">El link no es correcto</div>  
-            <a href="trabajos_alumnos/#/proyectos" id="volver" class="mt-5 btn btn-primary">
+            <a href="/#/proyectos" id="volver" class="mt-5 btn btn-primary">
               Volver atrás
             </a>
 
