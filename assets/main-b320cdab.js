@@ -11727,8 +11727,8 @@ const enrutador = {
   // Método que obtiene la ruta del navegador
   router: async () => {
     const pathCompleto = window.location.hash;
-    const path = pathCompleto.split("/")[3];
-    const parametro = pathCompleto.split("/")[4];
+    const path = pathCompleto.split("/")[2];
+    const parametro = pathCompleto.split("/")[3];
     const componenteVista = await enrutador.rutas[path];
     if (componenteVista) {
       try {
