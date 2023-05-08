@@ -11613,10 +11613,11 @@ const menuUsuario = {
       document.querySelector("#emailUsuarioLogueado").innerHTML = perfilLogueado.email;
       document.querySelector("#rolUsuarioLogueado").innerHTML = perfilLogueado.rol;
       document.querySelector(".liLogout").addEventListener("click", async (e) => {
+        let repositorio = "trabajos_alumnos"
         e.preventDefault();
         await User.logout();
         header.script();
-        window.location.href = "/#/home";
+        window.location.href = repositorio + "/#/home";
       });
     } else {
       const imgAvatar = "/assets/avatar.svg";
