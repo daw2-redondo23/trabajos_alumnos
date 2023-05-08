@@ -11764,7 +11764,7 @@ header.script();
 document.querySelector("footer").innerHTML = footer.template;
 enrutador.observadorRutas();
 const repositorio = "trabajos_alumnos"
-window.location.href =  repositorio + "/#/home";
+window.location.href =  "/#/home";
 export {
   Perfil as P,
   User as U,
